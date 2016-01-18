@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Жагсаалт</h1>
+
+  <tbody>
+    <% @pages.each do |page| %>
+      <tr>
+        <td><h1><%= page.name %></h1></td>
+        <td><h3><%= page.content %></h3></td>
+        <td><%= image_tag page.avatar.url(:thumb) %></td>
+        <td><div class="btn btn-default btn-lg">
+        <%= link_to 'харах', page %>
+      </div>
+      <div class="btn btn-default btn-lg">
+        <%= link_to 'солих', edit_page_path(page) %>
+      </div>
+      <div class="btn btn-default btn-lg">
+        <%= link_to 'Устгах', page, method: :delete, data: { confirm: 'Үнэхээр устгах уу?' } %>
+      </div></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<div class="btn btn-default btn-lg">
+<%= link_to 'Шинэ page', new_page_path %>
+</div>

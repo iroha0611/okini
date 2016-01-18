@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h2>
+  <strong>Нэр:</strong>
+  <%= @page.name %>
+</h2>
+
+<h2>
+  <strong>Утга:</strong>
+  <%= @page.content %>
+</h2>
+ 
+ <div class="col-md-8 col-md-offset-2">
+ <td><%= image_tag @page.avatar.url(:medium) %></td>
+</div>
+
+<div class="col-md-8 col-md-offset-2">
+ <div class="btn btn-default btn-lg">
+ <%= link_to 'солих', edit_page_path(@page) %>
+ </div>
+ <div class="btn btn-default btn-lg">
+ <%= link_to 'буцах', pages_path %>
+ </div>
+</div>
+
